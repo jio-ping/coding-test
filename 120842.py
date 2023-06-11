@@ -5,6 +5,7 @@
 #         answer.append(num_list[:n])
 #         num_list = num_list[n:]
 #     return answer
+# 런타임에러.....
 
 def solution(num_list,n):
     answer =[] 
