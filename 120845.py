@@ -1,9 +1,8 @@
-# """공던지기"""
-# def solution(numbers,k):
-#     number_list = numbers*(100//len(numbers))
-#     answer = []
-#     # print(number_list)
-#     for i in range(0,k+1,2):
-#         answer.append(str(number_list[i]))
-#     return answer
-# print(solution([1,2,3,4,5,6],5))
+"""공던지기"""
+def solution(numbers,k):
+    number_list = numbers*(1000//len(numbers))
+    answer = []
+    for i in range(0,2*k,2):
+        answer.append(number_list[i])
+    return answer[-1]
+print(solution([1,2,3],3))
