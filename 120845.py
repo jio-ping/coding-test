@@ -1,3 +1,6 @@
-# """공던지기"""
-def solution(numbers, k):
-    return 2 * (k - 1) % numbers[-1] + 1
+"""주사위의 개수"""
+import math
+def solution(box,n):
+    return (math.floor(box[0]/n)*math.floor(box[1]/n)*math.floor(box[2]/n))
+
+print(solution([10,8,6],3))
