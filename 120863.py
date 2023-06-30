@@ -25,21 +25,19 @@ def solution(polynomial):
         return f'{temp}'
     
 print(solution("1 + 112x + 3"))
-# temp = 0
-#     temp2=""
-#     term = 0
-    # for poly in polynomial:
-    #     if "x" in poly:
-    #         temp2+=poly
-    #     elif poly.isdigit():
-    #         temp += int(poly)
-    # print(temp2)
-    # for tem in temp2.replace("x","1x"):
-    #     if tem.isdigit():
-    #         term += int(tem)
-    # return f"{term}x + {temp}"
-    # list.sort()
-    # print(list)
-    # print(temp2)
 
-# print(type(3*1))
+# 다른사람풀이
+def solution(polynomial):
+    xnum = 0
+    const = 0
+    for c in polynomial.split(' + '):
+        if c.isdigit():
+            const+=int(c)
+        else:
+            xnum = xnum+1 if c=='x' else xnum+int(c[:-1])
+    if xnum == 0:
+        return str(const)
+    elif xnum==1:
+        return 'x + '+str(const) if const!=0 else 'x'
+    else:
+        return f'{xnum}x + {const}' if const!=0 else f'{xnum}x'
