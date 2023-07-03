@@ -11,4 +11,4 @@ const solution = (numbers) => numbers.map((number) => number * 2);
 function solution(numbers) {
   return numbers.reduce((a, b) => [...a, b * 2], []);
 }
-// reduce : 각 배열의
+// reduce : 배열.reduce((누적값, 현잿값, 인덱스, 요소) => { return 결과 }, 초깃값);
