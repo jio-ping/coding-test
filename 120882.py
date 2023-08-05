@@ -1,4 +1,4 @@
-"""등수매기기"""
+# 등수매기기 
 def solution(scores):
     sum_score = sorted([sum(score) for score in scores],reverse=True)
     return [sum_score.index(sum(score))+1 for score in scores]
