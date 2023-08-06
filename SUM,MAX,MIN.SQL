@@ -1,4 +1,4 @@
---131697
+--131697 mysql&oracle
 SELECT max(price) max_price
 from product
 
