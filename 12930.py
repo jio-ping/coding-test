@@ -11,7 +11,6 @@ def solution(string):
         answer.append(" ")
     return "".join(answer[:-1])
 
-
 print(solution( "try hello world"))
 
 # 다른사람풀이
