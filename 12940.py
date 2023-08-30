@@ -1,13 +1,13 @@
 # 최대 공약수와 최소공배수
-# def solution(n,m):
-#     tmp = 1
-#     for i in range(min(n,m),1,-1):  
-#         if n%i ==0 and m%i==0:
-#             print(i)
-#             n=n//i
-#             m=m//i
-#             tmp *= i    
-#     return ([tmp,int(tmp * n* m)])
+def solution(n,m):
+    tmp = 1
+    for i in range(min(n,m),1,-1):  
+        if n%i ==0 and m%i==0:
+            print(i)
+            n=n//i
+            m=m//i
+            tmp *= i    
+    return ([tmp,int(tmp * n* m)])
       
     
 # 다른사람풀이 
