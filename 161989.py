@@ -26,3 +26,14 @@ def time_out_solution(n,m,section):
                 section.remove(i)
                 cnt += 1
     return cnt
+
+# 다른사람풀이
+def solution(n, m, section):
+    answer = 1
+    prev = section[0]
+    for sec in section:
+        if sec - prev >= m:
+            prev = sec
+            answer += 1
+
+    return answer
