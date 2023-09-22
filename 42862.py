@@ -28,3 +28,20 @@ for i in range(len(reserve)):
                 have_training[reserve[i]+1]=True
         print(have_training)
 """
+# 다른사람풀이
+def solution(n, lost, reserve): 
+    answer = 0 
+    
+    reserve_del = set(reserve)-set(lost) 
+    lost_del = set(lost)-set(reserve) 
+    
+    for i in reserve_del: 
+        if i-1 in lost_del: 
+            lost_del.remove(i-1) 
+            
+        elif i+1 in lost_del: 
+            lost_del.remove(i+1) 
+            
+    answer = n - len(lost_del)
+    
+    return answer
