@@ -1,20 +1,15 @@
 # 체육복
 def solution(n,losts,reserves):
-    have_training = {}
-    for i in range(1,n+1):
-        if i in losts and i not in reserves:
-            have_training[i] = False
-        else:
-            have_training[i] = True
-    for reserve in reserves:
-        if have_training[reserve] == False:
-            have_training[reserve] = True
-        elif reserve-1 in have_training and have_training[reserve-1] ==False:
-            have_training[reserve-1] = True
-        elif reserve+1 in have_training and have_training[reserve+1] ==False:
-            have_training[reserve+1] = True
-        
-    return len([value for key,value in have_training.items() if value == True ])
+    여벌가진사람= set(reserves)-set(losts) 
+    # print(여벌가진사람)
+    잃어버린사람 = set(losts)-set(reserves) 
+    # print(잃어버린사람)
+    for i in 여벌가진사람:
+        if i-1 in 잃어버린사람:
+            잃어버린사람.remove(i-1)
+        elif i+1 in 잃어버린사람:
+            잃어버린사람.remove(i+1)
+    return(n-len(잃어버린사람))
 
 print(solution(5,[1,2,3],[2, 3, 4]))
 """
@@ -29,7 +24,7 @@ for i in range(len(reserve)):
         print(have_training)
 """
 # 다른사람풀이
-def solution(n, lost, reserve): 
+def soldution(n, lost, reserve): 
     answer = 0 
     
     reserve_del = set(reserve)-set(lost) 
@@ -45,3 +40,14 @@ def solution(n, lost, reserve):
     answer = n - len(lost_del)
     
     return answer
+def solution(n, lost, reserve):
+    _reserve = [r for r in reserve if r not in lost]
+    _lost = [l for l in lost if l not in reserve]
+    for r in _reserve:
+        f = r - 1
+        b = r + 1
+        if f in _lost:
+            _lost.remove(f)
+        elif b in _lost:
+            _lost.remove(b)
+    return n - len(_lost)
