@@ -16,3 +16,13 @@ FROM ANIMAL_INS
 GROUP BY NAME
 HAVING COUNT(NAME) >=2
 ORDER BY NAME
+
+--56788
+--MYSQL
+SELECT 
+substring(datetime,12,2) as hour,
+count(*)
+from animal_outs
+where substring(datetime,12,2)  between 9 and 19
+group by hour
+order by hour
