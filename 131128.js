@@ -18,8 +18,7 @@ function solution(x, y) {
   for (let i = 0; i < turn; i++) {
     if (y.includes(x[i])) {
       answer.unshift(x[i]);
-      // console.log(answer);
-      // y.splice(y.findIndex(x[i]), 0, "");
+      // console.log(answer);;
       console.log(y.findIndex(x[i]));
     }
     // return y;
